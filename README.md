@@ -114,3 +114,43 @@ Es un comando que permite desplazar el HEAD (lector actual) hacia un punto espec
 -Restaurar
 -Experimental
 -Cambiar
+
+##Clase 5
+
+###Ramas y Gitflow Basico
+
+La base del trabajo remoto y en equipo
+
+###¿Que son las ramas?
+
+Son una de las principales utilidades que disponemos en GIT para llevar un mejor control del codigo.
+
+###Git Branch
+
+Comando que permite gestionar las ramas que tiene o tendra el proyecto
+
+1."git branch"Permite listar ramas disponibles y nos muestra la posicion del HEAD.
+
+2."git branch <rama>"Crea una rama a partir de la rama que estamos posicionados.
+
+3."git branch -D <rama>"Borra la rama.
+
+###Git Checkout enfocado en ramas
+
+-git checkout <rama> :Cambia de ramas
+
+-git checkout -b <rama> :Crea una rama y te mueve a ella directamente.
+
+###Git Checkout VS. Git Switch
+
+Originalmente "git checkout" estaba sobrecargado:Cambio de rama, viajar a commits antiguos y restaurar archivos.
+
+En 2019 se introdujo "git switch" para separar la navegacion de ramas del resto de funciones.
+
+git checkout:Multiproposito.
+
+git switch:Especializado unicamente en ramas y evita errores accidentales.
+
+###Gitflow Basico
+
+Flujo de trabajo el cual nos permite trabajar de manera ordenada nuestras ramas, pues atraves de ciertas consignas y reglas establecidas,nos permite trabajar ordenadamente con ramas y versiones y unafacil adadtacion para cualquiera que quiera aportar en nuestro proyecto.
