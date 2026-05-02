@@ -154,3 +154,85 @@ git switch:Especializado unicamente en ramas y evita errores accidentales.
 ###Gitflow Basico
 
 Flujo de trabajo el cual nos permite trabajar de manera ordenada nuestras ramas, pues atraves de ciertas consignas y reglas establecidas,nos permite trabajar ordenadamente con ramas y versiones y unafacil adadtacion para cualquiera que quiera aportar en nuestro proyecto.
+
+##Clase 6
+
+###¿Que es git merge?
+
+Permite fusionar varias ramas en una sola para que ambas tengan commits hechos.
+Se agrega el flag -no-ff (no fast forward)lo cual hace que el historial de las ramas no se pierda y te fuerce a hacer un commit para que el merge no se pierda(aun si se borra).
+
+###¿Que es git fetch?
+
+Es el comando que permite ver si hubo cambios en la rama actual o las ramas hijas.
+
+###¿Que es git pull?
+
+Permite traer todos los cambios que tiene el repositorio remoto de esa rama.
+Se usa tambien con origin y el nombre de la rama para que no tengas problemas la subirla(git pull origin rama).
+
+###¿Que es git push?
+
+Sube tus cambios al repositorio remoto de esa rama.
+Tambien se usa con origin y el nombre de la rama(git push origin rama).
+
+###Consejo.-
+
+Si no es tu repositorio la primera vez que hagas git push debes hacerlo con flag -u para que no tenga que pedir permiso para crear la rama.
+
+##Clase 7
+
+###¿Que son los pull request?
+
+Es la forma profesional de trabajar con git/github,crea un request en el grupo del repositorio en github que permite ver que se quiere mergear.
+
+###¿Como crear un PR?
+
+Para ello primero una vez que hagas "git push origin rama" debes:
+1.Dirigirte (github.com)
+2.Ir a tu rama
+3.Hacer click en "contribute" y luego click en "Open pull request".
+4.Seleccionar que rama quieres hacer pull request en este caso "develop"
+5.Escribir una descripcion de lo que hiciste en tu rama.
+6.Hacer click en "create pull request".
+
+###Flujo de trabajo con pull request
+
+git checkout develop
+git fetch 
+git pull origin develop
+git checkout rama # Agragas -b si estas creando la rama
+git merge develop # Solo si hubo cambios en develop
+-Trabajas en tu rama
+git push origin rama # Agregas -u si es la primera vez que subes cambios al repositorio remoto
+git checkout develop
+git fetch
+git checkout rama
+git merge develop # Solo si hubo cambios en develop antes de hacer la PR
+-Resuelves manualmente los archivos fallidos y sus conflictos
+git add
+git commit
+-[Ctrl + O,Enter,Ctrl + X](Depede si usamos nano)
+git push origin rama
+-Siguimos el flujo de ¿Como crear un PR?
+
+###¿Por que usamos PRs si ya podemos trabajar normalmente sin ellos?
+
+Se usan por temas de seguridad para que no cualquier colaborador pueda alterar o mergear nuestro repositorio.
+Permite ver los cambios y limita la colaboracion.
+Permite un mejor manejo grupal de nuestro repositorio en equipo.
+
+###¿Como proteger mi repositorio y limitar la colaboracion?
+
+1.Vamos a "Settings" y a "Branches"
+2.Luego selecionamos "add branch rules set"
+3.Le ponemos nombre a las reglas
+4.Activamos la reglas por defecto(Enforcement status)
+5.Luego en "Target Branches" selecionamos que ramas queremos proteger.
+6.Activamos "Restric updates"para evitar errores de actualizacion.
+7.Activamos "Require a pull request before merging"Lo que impide que se mergeen la ramas de "Target Branches"sin hacer un pull request.
+8.En "Bypass list" se le puede dar libertad a un colaborador para saltarse la reglas(Si lodejas vacio TODOS siguen las reglas)
+9.En "Required aprovals" se recomienda colocar la mitad del numero de integrantes mas 1.
+10.Hacemos click en "Create" y ya esta.
+
+
